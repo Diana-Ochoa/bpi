@@ -1,0 +1,27 @@
+# Permite solo acceso a carpetas con indice.
+Options All -Indexes
+
+# Permite seguir enlaces simbolicos.
+Options +FollowSymlinks
+
+# Reescribe la base y direccionar la reglas al directorio donde se trabaja.
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^bpi\.com.pe
+RewriteRule ^(.*)$ https://www.bpi.com.pe/demos/newidentity/$1 [R=permanent,L] 
+
+Rewriterule ^home/$ https://www.bpi.com.pe/demos/newidentity/$1 [L,QSA]
+Rewriterule ^quienes-somos/$ quienes-somos.php [L,QSA]
+Rewriterule ^contactanos/$ contactanos.php [L,QSA]
+Rewriterule ^ahorro-plazo-fijo/$ ahorro-plazo-fijo.php [L,QSA]
+Rewriterule ^credito/$ credito.php [L,QSA]
+Rewriterule ^prestamo/$ prestamo.php [L,QSA]
+Rewriterule ^cambio-de-divisas/$ cambio-de-divisas.php [L,QSA]
+Rewriterule ^inversion-inmobiliaria/$ inversion-inmobiliaria.php [L,QSA]
+Rewriterule ^acceso-restringido/$ acceso-restringido.php [L,QSA]
+Rewriterule ^atractivo-modelo-de-negocio-en-bienes-raices/$ atractivo-modelo-de-negocio-en-bienes-raices.php [L,QSA]
+Rewriterule ^mercado-financiero-en-el-peru-historia-y-actualidad/$ mercado-financiero-en-el-peru-historia-y-actualidad.php [L,QSA]
+Rewriterule ^bienes-raices-en-lima-un-mercado-en-ascenso/$ bienes-raices-en-lima-un-mercado-en-ascenso.php [L,QSA]
+Rewriterule ^terminos-y-condiciones/$ terminos-y-condiciones.php [L,QSA]
+
+ErrorDocument 404 /demos/newidentity/error.php
+ErrorDocument 500 /demos/newidentity/error.php
